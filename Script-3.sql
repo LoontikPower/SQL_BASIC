@@ -1,3 +1,4 @@
+
 select * from city;
 select Name, District from city ;
 select distinct Name from city;
@@ -65,3 +66,18 @@ select count(*) from city where Population > (select avg(Population) from city);
 select avg(Population) as AvgPop, CountryCode from city group by CountryCode;
 
 select * from city where city.CountryCode like 'P%';
+
+select * from city where Name like 'K%';
+select * from city where Name like 'D%' or Name like'H%';
+select * from city where Name like '_e_at';
+select count(*) as Vcon from city where Name like '%v%';
+select * from city where Name like 'Las%';
+select * from city where CountryCode like 'AR%' or 'U%';
+select * from city where CountryCode like 'AR%' and Population >=1000000;
+select * from city where Name like '%b' and Population <=100000;
+select * from city where CountryCode like 'E%Y';
+select * from city where Name like '%hub%';
+select * from city where Name like 'Am_%';
+select * from city where Name like '%_na';
+
+
