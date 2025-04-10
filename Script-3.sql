@@ -88,7 +88,9 @@ select * from city where Name regexp '^[fa]';
 select count(*) as A_D from city where Name regexp '^[a-d]' ;
 select * from city where Name regexp 'Bl*';
 # wildcards
-
+select * from city where Name in ('Kabul','London','New York');
+select * from city where CountryCode not in ('AFG','NDL','DZA');
+# in and not in
 
 
 
