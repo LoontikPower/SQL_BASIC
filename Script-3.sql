@@ -84,5 +84,11 @@ select * from city where Name like '%_na';
 
 select * from city where Name like '____on';
 
+select * from city where Name regexp '^[fa]';
+select count(*) as A_D from city where Name regexp '^[a-d]' ;
+select * from city where Name regexp 'Bl*';
+# wildcards
+
+
 
 
