@@ -100,5 +100,11 @@ select * from city where Population between 10000 and 20000 ;
 select * from city where District between 'Grand Cayman' and 'Kitaa' order by District;
 # between operator
 
+select Name as Imya from city where Population between 10000 and 20000 ;
+select Name Imia from city where Population between 10000 and 20000 ;
+select ID as NumID, Name as Imya from city where Population between 10000 and 20000;
+select Name as 'My name is' from city where Population between 10000 and 20000 ;
+
+
 
 
