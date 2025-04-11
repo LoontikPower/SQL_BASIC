@@ -92,5 +92,13 @@ select * from city where Name in ('Kabul','London','New York');
 select * from city where CountryCode not in ('AFG','NDL','DZA');
 # in and not in
 
+select * from city where ID between 1 and 10;
+select * from city where ID not between 5 and 10;
+select * from city where Population between 10000 and 20000 and District regexp '^[gb]' ;
+select * from city where Population between 10000 and 20000 and CountryCode in ('CYM','FRO','GLP');
+select * from city where Population between 10000 and 20000 ;
+select * from city where District between 'Grand Cayman' and 'Kitaa' order by District;
+# between operator
+
 
 
