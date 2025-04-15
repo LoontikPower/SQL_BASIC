@@ -107,6 +107,8 @@ select Name as 'My name is' from city where Population between 10000 and 20000 ;
 
 # Inner Join or just join by default
 select city.CountryCode, country.Name, country.Region, city.Name from city inner join country on city.CountryCode = country.Code; 
+select country.Code, country.Name, countrylanguage.Language 
+from  country join countrylanguage on country.Code = countrylanguage.CountryCode ;
 
 
 
