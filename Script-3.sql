@@ -105,6 +105,8 @@ select Name Imia from city where Population between 10000 and 20000 ;
 select ID as NumID, Name as Imya from city where Population between 10000 and 20000;
 select Name as 'My name is' from city where Population between 10000 and 20000 ;
 
+# Inner Join or just join by default
+select city.CountryCode, country.Name, country.Region, city.Name from city inner join country on city.CountryCode = country.Code; 
 
 
 
