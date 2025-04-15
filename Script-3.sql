@@ -115,4 +115,12 @@ select country.Code, country.Name, city.Name, city.Population, countrylanguage.P
 from (( country inner join city on country.Code = city.CountryCode
 inner join countrylanguage on country.Code = countrylanguage.CountryCode));
 
+# Left join
+select city.CountryCode, country.IndepYear from city left join country on city.CountryCode = country.Code; 
+#Right join
+select country.Code, city.District, city.Population  from country right join city on country.Code = city.CountryCode;
+# Full join
+select country.Code , city.Name from country full join city on country.Code = city.CountryCode order by city.Name limit 200;
+
+
 
