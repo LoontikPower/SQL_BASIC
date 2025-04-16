@@ -122,5 +122,22 @@ select country.Code, city.District, city.Population  from country right join cit
 # Full join
 select country.Code , city.Name from country full join city on country.Code = city.CountryCode order by city.Name limit 200;
 
+#union distinct values
+select Code from country
+union
+select CountryCode from city;
+
+#union all - all values and duplicates
+select Code from country
+union all
+select CountryCode from city;
+
+# group by
+select count(Id), CountryCode from city group by CountryCode order by count(Id) desc;
+
+# group by with inner join
+select country.Name as Country, count(city.Id) as NumbersOfCities
+from city 
+join country on city.CountryCode = country.Code group by Country;
 
 
