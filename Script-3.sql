@@ -138,6 +138,6 @@ select count(Id), CountryCode from city group by CountryCode order by count(Id) 
 # group by with inner join
 select country.Name as Country, count(city.Id) as NumbersOfCities
 from city 
-join country on city.CountryCode = country.Code group by Country;
-
+join country on city.CountryCode = country.Code group by Country
+having count(city.Id)>=50;
 
