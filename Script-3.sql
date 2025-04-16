@@ -141,3 +141,5 @@ from city
 join country on city.CountryCode = country.Code group by Country
 having count(city.Id)>=50;
 
+
+

@@ -12,3 +12,7 @@ from Customer
 inner join Employee on customer.SupportRepId = employee.EmployeeId 
 group by last_name 
 Having NumberOfSupport > 18;
+
+/*EXISTS*/
+select FirstName from Customer 
+where EXISTS ( select LastName from Employee where employee.EmployeeId = customer.SupportRepId and employee.EmployeeId >3 );
