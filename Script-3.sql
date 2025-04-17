@@ -82,4 +82,64 @@ select * from city where Name like '%_na';
 
 #Comment for sql_fix branch
 
+select * from city where Name like '____on';
+
+select * from city where Name regexp '^[fa]';
+select count(*) as A_D from city where Name regexp '^[a-d]' ;
+select * from city where Name regexp 'Bl*';
+# wildcards
+select * from city where Name in ('Kabul','London','New York');
+select * from city where CountryCode not in ('AFG','NDL','DZA');
+# in and not in
+
+select * from city where ID between 1 and 10;
+select * from city where ID not between 5 and 10;
+select * from city where Population between 10000 and 20000 and District regexp '^[gb]' ;
+select * from city where Population between 10000 and 20000 and CountryCode in ('CYM','FRO','GLP');
+select * from city where Population between 10000 and 20000 ;
+select * from city where District between 'Grand Cayman' and 'Kitaa' order by District;
+# between operator
+
+select Name as Imya from city where Population between 10000 and 20000 ;
+select Name Imia from city where Population between 10000 and 20000 ;
+select ID as NumID, Name as Imya from city where Population between 10000 and 20000;
+select Name as 'My name is' from city where Population between 10000 and 20000 ;
+
+# Inner Join or just join by default
+select city.CountryCode, country.Name, country.Region, city.Name from city inner join country on city.CountryCode = country.Code; 
+select country.Code, country.Name, countrylanguage.Language 
+from  country join countrylanguage on country.Code = countrylanguage.CountryCode;
+
+# join data from three tables
+select country.Code, country.Name, city.Name, city.Population, countrylanguage.Percentage 
+from (( country inner join city on country.Code = city.CountryCode
+inner join countrylanguage on country.Code = countrylanguage.CountryCode));
+
+# Left join
+select city.CountryCode, country.IndepYear from city left join country on city.CountryCode = country.Code; 
+#Right join
+select country.Code, city.District, city.Population  from country right join city on country.Code = city.CountryCode;
+# Full join
+select country.Code , city.Name from country full join city on country.Code = city.CountryCode order by city.Name limit 200;
+
+#union distinct values
+select Code from country
+union
+select CountryCode from city;
+
+#union all - all values and duplicates
+select Code from country
+union all
+select CountryCode from city;
+
+# group by
+select count(Id), CountryCode from city group by CountryCode order by count(Id) desc;
+
+# group by with inner join
+select country.Name as Country, count(city.Id) as NumbersOfCities
+from city 
+join country on city.CountryCode = country.Code group by Country
+having count(city.Id)>=50;
+
+
 
